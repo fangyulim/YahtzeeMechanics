@@ -43,7 +43,7 @@ private:
 
 public:
 
-
+	
 	Yahtzee()
 	{
 		int p2sumOnes = 0;
@@ -62,20 +62,20 @@ public:
 		int p2totalS = 0;
 		int p2bonus = 0;
 
-		int p2dice=0;
-		int p2num=0;
-		int p2noDieHold=0;
-		int p2die=0;
-		int p2diceValueCount=0;
-		int p2diceValue=0;
-		int p2numValue=0;
+		int p2dice = 0;
+		int p2num = 0;
+		int p2noDieHold = 0;
+		int p2die = 0;
+		int p2diceValueCount = 0;
+		int p2diceValue = 0;
+		int p2numValue = 0;
 	}
-	
+
 
 	void rollDice(int dice[]);
 	void countDice(int dice[], int dice_value_count[]);
 	//int calcFullH();
-	void holdDie(int p2die_held[],int die[]);
+	void holdDie(int p2die_held[], int die[]);
 	int sumOne();
 	int sumTwo();
 	int sumThree();
