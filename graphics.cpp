@@ -112,6 +112,7 @@ void Graphics::C2draw()
     // y.menu();
     Graphics g;
     g.run();
+    
 
     int num1;
     int num2;
@@ -147,6 +148,10 @@ void Graphics::C2draw()
     sf::Texture p2;
     sf::Sprite player2;
 
+    
+
+
+
     // run the program as long as the window is open
     while (window.isOpen())
     {
@@ -156,155 +161,249 @@ void Graphics::C2draw()
             // "close requested" event: we close the window
             if (event.type == sf::Event::Closed)
                 window.close();
-        }
-        //lines
-        window.clear(sf::Color::Color(100, 100, 250, 0));
-        sf::RectangleShape shape(sf::Vector2f(10.f, 1000.f));
-        shape.setFillColor(sf::Color::White);
-        shape.setPosition(820, 0);
-        sf::RectangleShape shap(sf::Vector2f(10.f, 1000.f));
-        shap.setFillColor(sf::Color::White);
-        shap.setPosition(600, 0);
 
-        if (!dices[0].loadFromFile("dice-six-faces-one.png"));
-        if (!dices[1].loadFromFile("dice-six-faces-two.png"));
-        if (!dices[2].loadFromFile("dice-six-faces-three.png"));
-        if (!dices[3].loadFromFile("dice-six-faces-four.png"));
-        if (!dices[4].loadFromFile("dice-six-faces-five.png"));
-        if (!dices[5].loadFromFile("dice-six-faces-six.png"));
-        for (int i = 0; i < 6; i++)
-        {
-            die1[i].setScale(0.25f, 0.25f);
-            die1[i].setPosition((1400), 150);
-            die1[i].setTexture(dices[i]);
-        }
+            //lines
+            window.clear(sf::Color::Color(100, 100, 250, 0));
+            sf::RectangleShape shape(sf::Vector2f(10.f, 1000.f));
+            shape.setFillColor(sf::Color::White);
+            shape.setPosition(820, 0);
+            sf::RectangleShape shap(sf::Vector2f(10.f, 1000.f));
+            shap.setFillColor(sf::Color::White);
+            shap.setPosition(600, 0);
 
-        for (int j = 0; j < 6; j++)
-        {
-            die2[j].setScale(0.25f, 0.25f);
-            die2[j].setPosition((1400), 300);
-            die2[j].setTexture(dices[j]);
-        }
-
-        for (int n = 0; n < 6; n++)
-        {
-            die3[n].setScale(0.25f, 0.25f);
-            die3[n].setPosition((1400), 450);
-            die3[n].setTexture(dices[n]);
-        }
-
-        for (int m = 0; m < 6; m++)
-        {
-            die4[m].setScale(0.25f, 0.25f);
-            die4[m].setPosition((1400), 600);
-            die4[m].setTexture(dices[m]);
-        }
-
-        for (int k = 0; k < 6; k++)
-        {
-            die5[k].setScale(0.25f, 0.25f);
-            die5[k].setPosition((1400), 750);
-            die5[k].setTexture(dices[k]);
-        }
-
-        if (!board.loadFromFile("GB.png")) {}
-        //board
-        score_type.setTexture(board);
-        score_type.setTextureRect(sf::IntRect(0, 0, 400, 1000));
-        //player 1 2
-        sf::Font font;
-        if (!font.loadFromFile("Oswald-HeavyItalic.ttf"))
-        { }
-        sf::Text p1;
-        p1.setFont(font);
-        p1.setString("Player 1");
-        p1.setCharacterSize(50);
-        p1.setFillColor(sf::Color::White);
-        p1.setPosition(420, 0);
-        sf::Text p2;
-        p2.setFont(font);
-        p2.setString("Player 2");
-        p2.setCharacterSize(50);
-        p2.setFillColor(sf::Color::White);
-        p2.setPosition(620, 0);
-        //dice
-        window.draw(die1[num1]);
-        window.draw(die2[num2]);
-        window.draw(die3[num3]);
-        window.draw(die4[num4]);
-        window.draw(die5[num5]);
-
-        int numRoll = 1;
-        while (numRoll < 3)
-        {
-            sf::Text YN;
-            YN.setFont(font);
-            YN.setString("Keep dice?Enter(Y) Space(N)");
-            YN.setFillColor(sf::Color::Black);
-            YN.setPosition(850, 100);
-            YN.setCharacterSize(30);
-            window.draw(YN);
-
-            if (event.key.code == sf::Keyboard::Enter)
+            if (!dices[0].loadFromFile("dice-six-faces-one.png"));
+            if (!dices[1].loadFromFile("dice-six-faces-two.png"));
+            if (!dices[2].loadFromFile("dice-six-faces-three.png"));
+            if (!dices[3].loadFromFile("dice-six-faces-four.png"));
+            if (!dices[4].loadFromFile("dice-six-faces-five.png"));
+            if (!dices[5].loadFromFile("dice-six-faces-six.png"));
+            for (int i = 0; i < 6; i++)
             {
-                sf::Text noDiePick;
-                noDiePick.setFont(font);
-                noDiePick.setString("How many dice do you want to keep");
-                noDiePick.setFillColor(sf::Color::Black);
-                noDiePick.setPosition(850, 200);
-                noDiePick.setCharacterSize(30);
-                window.draw(noDiePick);
+                die1[i].setScale(0.25f, 0.25f);
+                die1[i].setPosition((1400), 150);
+                die1[i].setTexture(dices[i]);
+            }
 
-                sf::Text whiDie;
-                whiDie.setFont(font);
-                whiDie.setString("(A)1 (B)2 (C)3 (D)4 (E)5)");
-                whiDie.setFillColor(sf::Color::Black);
-                whiDie.setPosition(850, 300);
-                whiDie.setCharacterSize(30);
-                window.draw(whiDie);
-               
-                sf::Event event1{};
-                if (event1.key.code == sf::Keyboard::A)
-                {
-                    sf::Text arrDie;
-                    arrDie.setFont(font);
-                    arrDie.setString("(A)Die1 (B)Die2 (C)Die3 (D)Die4 (E)Die5");
-                    arrDie.setFillColor(sf::Color::Black);
-                    arrDie.setPosition(850, 400);
-                    arrDie.setCharacterSize(30);
-                    window.draw(arrDie);
-                    sf::Event event2{};
-                    if (event2.key.code == sf::Keyboard::A)
-                    {
-                        window.draw(die2[num2]);
-                        window.draw(die3[num3]);
-                        window.draw(die4[num4]);
-                        window.draw(die5[num5]);
-                    }
+            for (int j = 0; j < 6; j++)
+            {
+                die2[j].setScale(0.25f, 0.25f);
+                die2[j].setPosition((1400), 300);
+                die2[j].setTexture(dices[j]);
+            }
 
-                }
+            for (int n = 0; n < 6; n++)
+            {
+                die3[n].setScale(0.25f, 0.25f);
+                die3[n].setPosition((1400), 450);
+                die3[n].setTexture(dices[n]);
+            }
+
+            for (int m = 0; m < 6; m++)
+            {
+                die4[m].setScale(0.25f, 0.25f);
+                die4[m].setPosition((1400), 600);
+                die4[m].setTexture(dices[m]);
+            }
+
+            for (int k = 0; k < 6; k++)
+            {
+                die5[k].setScale(0.25f, 0.25f);
+                die5[k].setPosition((1400), 750);
+                die5[k].setTexture(dices[k]);
+            }
+
+            if (!board.loadFromFile("GB.png")) {}
+            //board
+            score_type.setTexture(board);
+            score_type.setTextureRect(sf::IntRect(0, 0, 400, 1000));
+            //player 1 2
+            sf::Font font;
+            if (!font.loadFromFile("Oswald-HeavyItalic.ttf"))
+            {
+            }
+            sf::Text p1;
+            p1.setFont(font);
+            p1.setString("Player 1");
+            p1.setCharacterSize(50);
+            p1.setFillColor(sf::Color::White);
+            p1.setPosition(420, 0);
+            sf::Text p2;
+            p2.setFont(font);
+            p2.setString("Player 2");
+            p2.setCharacterSize(50);
+            p2.setFillColor(sf::Color::White);
+            p2.setPosition(620, 0);
+            //dice
+            window.draw(die1[num1]);
+            window.draw(die2[num2]);
+            window.draw(die3[num3]);
+            window.draw(die4[num4]);
+            window.draw(die5[num5]);
+
+            int numRoll = 1;
+            while (numRoll < 3)
+            {
+                sf::Text YN;
+                YN.setFont(font);
+                YN.setString("Keep dice?Enter(Y) Space(N)");
+                YN.setFillColor(sf::Color::Black);
+                YN.setPosition(850, 100);
+                YN.setCharacterSize(30);
+                window.draw(YN);
 
                 
+                    if (event.key.code == sf::Keyboard::Enter)
+                    {
+                        sf::Text noDiePick;
+                        noDiePick.setFont(font);
+                        noDiePick.setString("How many dice do you want to keep");
+                        noDiePick.setFillColor(sf::Color::Black);
+                        noDiePick.setPosition(850, 200);
+                        noDiePick.setCharacterSize(30);
+                        window.draw(noDiePick);
 
+                        sf::Text whiDie;
+                        whiDie.setFont(font);
+                        whiDie.setString("(A)1 (B)2 (C)3 (D)4 (E)5)");
+                        whiDie.setFillColor(sf::Color::Black);
+                        whiDie.setPosition(850, 300);
+                        whiDie.setCharacterSize(30);
+                        window.draw(whiDie);
+                        
+
+                        // sf::Event event1{};
+                        if (event.key.code == sf::Keyboard::Enter)
+                        {
+                            sf::Text arrDie;
+                            arrDie.setFont(font);
+                            arrDie.setString("(A)Die1 (B)Die2 (C)Die3 (D)Die4 (E)Die5");
+                            arrDie.setFillColor(sf::Color::Black);
+                            arrDie.setPosition(850, 400);
+                            arrDie.setCharacterSize(30);
+                            window.draw(arrDie);
+                            window.clear();
+                            if (event.key.code == sf::Keyboard::Enter)
+                            {
+                                window.clear(sf::Color::Color(100, 100, 250, 0));
+                                sf::RectangleShape rect1(sf::Vector2f(0.25f, 0.25f));
+                                rect1.setFillColor(sf::Color::Color(100, 100, 250, 0));
+                                rect1.setPosition(1400, 150);
+                                window.draw(rect1);
+                                window.draw(die2[num2]);
+                                window.draw(die3[num3]);
+                                window.draw(die4[num4]);
+                                window.draw(die5[num5]);
+                            }
+
+                            else if (sf::Event::TextEntered == sf::Keyboard::B)
+                            {
+                                sf::RectangleShape rect1(sf::Vector2f(0.25f, 0.25f));
+                                rect1.setFillColor(sf::Color::Color(100, 100, 250, 0));
+                                rect1.setPosition(1400, 300);
+                                window.draw(die1[num1]);
+                                window.draw(rect1);
+                                window.draw(die3[num3]);
+                                window.draw(die4[num4]);
+                                window.draw(die5[num5]);
+                            }
+
+                            else if (sf::Event::TextEntered == sf::Keyboard::C)
+                            {
+                                sf::RectangleShape rect1(sf::Vector2f(0.25f, 0.25f));
+                                rect1.setFillColor(sf::Color::Color(100, 100, 250, 0));
+                                rect1.setPosition(1400, 450);
+                                window.draw(die1[num1]);
+                                window.draw(die2[num2]);
+                                window.draw(rect1);
+                                window.draw(die4[num4]);
+                                window.draw(die5[num5]);
+                            }
+                            else if (sf::Event::TextEntered == sf::Keyboard::D)
+                            {
+                                sf::RectangleShape rect1(sf::Vector2f(0.25f, 0.25f));
+                                rect1.setFillColor(sf::Color::Color(100, 100, 250, 0));
+                                rect1.setPosition(1400, 600);
+                                window.draw(die1[num1]);
+                                window.draw(die2[num2]);
+                                window.draw(die3[num3]);
+                                window.draw(rect1);
+                                window.draw(die5[num5]);
+                            }
+                            else if (sf::Event::TextEntered == sf::Keyboard::E)
+                            {
+                                sf::RectangleShape rect1(sf::Vector2f(0.25f, 0.25f));
+                                rect1.setFillColor(sf::Color::Color(100, 100, 250, 0));
+                                rect1.setPosition(1400, 0);
+                                window.draw(die1[num1]);
+                                window.draw(die2[num2]);
+                                window.draw(die3[num3]);
+                                window.draw(die4[num4]);
+                                window.draw(rect1);
+                            }
+
+                        }
+                        else  if (event.key.code == sf::Keyboard::Escape)
+                        {
+                            sf::Text arrDie;
+                            arrDie.setFont(font);
+                            arrDie.setString("(A)Die1 (B)Die2 (C)Die3 (D)Die4 (E)Die5");
+                            arrDie.setFillColor(sf::Color::Black);
+                            arrDie.setPosition(850, 400);
+                            arrDie.setCharacterSize(30);
+                            window.draw(arrDie);
+                            //sf::Event event2{};
+                            if (event.key.code == sf::Keyboard::A && sf::Keyboard::B)
+                            {
+                                sf::RectangleShape rect1(sf::Vector2f(0.25f, 0.25f));
+                                rect1.setFillColor(sf::Color::Color(100, 100, 250, 0));
+                                rect1.setPosition(1400, 150);
+                                sf::RectangleShape rect1(sf::Vector2f(0.25f, 0.25f));
+                                rect2.setFillColor(sf::Color::Color(100, 100, 250, 0));
+                                rect2.setPosition(1400, 150);
+                                window.draw(rect1);
+                                window.draw(rect2);
+                                window.draw(die3[num3]);
+                                window.draw(die4[num4]);
+                                window.draw(die5[num5]);
+                            }
+                            if (event.key.code == sf::Keyboard::A && sf::Keyboard::C)
+                            {
+                                sf::RectangleShape rect1(sf::Vector2f(0.25f, 0.25f));
+                                rect1.setFillColor(sf::Color::Color(100, 100, 250, 0));
+                                rect1.setPosition(1400, 150);
+                                window.draw(rect1);
+                                window.draw(die2[num2]);
+                                window.draw(die3[num3]);
+                                window.draw(die4[num4]);
+                                window.draw(die5[num5]);
+                            }
+                        }
+
+
+
+                    }
+
+
+                
+                numRoll++;
             }
-            
 
-           
-            numRoll++;
+            //board and player
+            window.draw(score_type);
+            window.draw(p1);
+            window.draw(p2);
+            //draw line
+            window.draw(shape);
+            window.draw(shap);
+            window.display();
         }
-        
-        //board and player
-        window.draw(score_type);
-        window.draw(p1);
-        window.draw(p2);
-        //draw line
-        window.draw(shape);
-        window.draw(shap);
-        window.display();
-       
 
-        //congratulations!
-       /* while (window.isOpen())
+        
+    }
+    if (p2totalS)
+
+    {   //congratulations!
+        while (window.isOpen())
         {
             sf::Font font;
             if (!font.loadFromFile("Oswald-HeavyItalic.ttf"))
@@ -326,7 +425,7 @@ void Graphics::C2draw()
             window.draw(cg);
             window.draw(CONGRAT);
             window.display();
-        }*/
+        }
     }
     
 }
