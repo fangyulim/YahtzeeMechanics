@@ -1,0 +1,34 @@
+  for (int i = 0; i < 6; i++)
+        {
+            die1[i].setScale(0.25f, 0.25f);
+            die1[i].setPosition((1400), 150);
+            die1[i].setTexture(dices[i]);
+        }
+
+        for (int j = 0; j < 6; j++)
+        {
+            die2[j].setScale(0.25f, 0.25f);
+            die2[j].setPosition((1400), 300);
+            die2[j].setTexture(dices[j]);
+        }
+
+        for (int n = 0; n < 6; n++)
+        {
+            die3[n].setScale(0.25f, 0.25f);
+            die3[n].setPosition((1400), 450);
+            die3[n].setTexture(dices[n]);
+        }
+
+        for (int m = 0; m < 6; m++)
+        {
+            die4[m].setScale(0.25f, 0.25f);
+            die4[m].setPosition((1400), 600);
+            die4[m].setTexture(dices[m]);
+        }
+
+        for (int k = 0; k < 6; k++)
+        {
+            die5[k].setScale(0.25f, 0.25f);
+            die5[k].setPosition((1400), 750);
+            die5[k].setTexture(dices[k]);
+        }

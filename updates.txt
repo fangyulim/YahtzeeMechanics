@@ -1,0 +1,66 @@
+//text to pick
+            
+            sf::Text pick_dice2;
+            sf::Text pick_dice3;
+            sf::Text pick_dice4;
+            sf::Text pick_dice5;
+
+//show text
+           
+
+            pick_dice2.setFont(font);
+            pick_dice2.setString("Pick dice 2? Enter(Y), Esc(N)");
+            pick_dice2.setFillColor(sf::Color::Black);
+            pick_dice2.setPosition(950, 250);
+
+//if pick
+if (event.key.code == sf::Keyboard::Enter)
+            {
+
+                //event.KeyPressed;
+                window.clear(sf::Color::Color(100, 100, 250, 0));
+
+                // window.clear(sf::Color::Color(100, 100, 250, 0));
+
+
+                window.draw(pick_dice1);
+                //  window.draw(die1[num1]);
+                window.draw(die2[num2]);
+                window.draw(die3[num3]);
+                window.draw(die4[num4]);
+                window.draw(die5[num5]);
+
+                window.draw(pick_dice2);
+
+
+                //sf::Event event1;
+                if (event1.key.code == sf::Keyboard::RShift)
+                {
+
+                    //window.clear(sf::Color::Color(100, 100, 250, 0));
+
+                    window.clear(sf::Color::Color(100, 100, 250, 0));
+
+
+                    // window.draw(pick_dice1);
+                    window.draw(pick_dice2);
+                    //  window.draw(die1[num1]);
+                    //window.draw(die2[num2]);
+                    window.draw(die3[num3]);
+                    window.draw(die4[num4]);
+                    window.draw(die5[num5]);
+
+                }
+
+
+            }
+
+
+        }
+
+
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+        {
+
+        }
+           sf::Event event1{};
