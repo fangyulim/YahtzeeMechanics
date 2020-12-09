@@ -769,7 +769,7 @@ void Graphics::C2draw()
             sf::Text CONGRAT;
             CONGRAT.setFont(font);
 
-            CONGRAT.setString("Congratulations!Player""x""has won!");
+            CONGRAT.setString("Congratulations!Player""1""has won!");
             CONGRAT.setCharacterSize(100);
             CONGRAT.setFillColor(sf::Color::White);
             CONGRAT.setPosition(250, 375);
@@ -794,7 +794,7 @@ void Graphics::C2draw()
         sf::Text CONGRAT;
         CONGRAT.setFont(font);
 
-        CONGRAT.setString("Congratulations!Player""y""has won!");
+        CONGRAT.setString("Congratulations!Player""2""has won!");
         CONGRAT.setCharacterSize(100);
         CONGRAT.setFillColor(sf::Color::White);
         CONGRAT.setPosition(250, 375);
