@@ -216,6 +216,15 @@ int Yahtzee::Yahtzeee()
     return p2yahtzeeS;
 }
 
+int Yahtzee::chance()
+{
+    for (int index = 0; index < 6; index++)
+    {
+        p2chance += p2die[index];
+    }
+    return p2chance;
+}
+
 int Yahtzee::totalScore()
 {
     p2totalS = p2sumOnes + p2sumTwos + p2sumThrees + p2sumFours + p2sumFives + p2sumSixs + p2threeOKind + p2fourOKind + p2fullHouse + p2smallSt + p2largeSt + p2yahtzeeS + p2chance + p2bonus;
