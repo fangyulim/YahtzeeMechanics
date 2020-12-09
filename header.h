@@ -8,7 +8,7 @@
 
 class Yahtzee
 {
-private:
+protected:
 	int p2sumOnes;
 	int p2sumTwos;
 	int p2sumThrees;
@@ -89,6 +89,7 @@ public:
 	int smallStraight();
 	int largeStraight();
 	int Yahtzeee();
+	int chance();
 	void invalid();
 	int totalScore();
 	void reset(int anyArray[], int size);
